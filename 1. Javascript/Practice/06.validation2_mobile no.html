@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+Test JavaScript
+<br>
+-------JS validation-------
+<br>
+<script language="javascript">
+
+function chkfrm(){
+var x=document.card.name.value;
+var y=document.card.address.value;
+var z=document.card.contact.value;
+var flag=0;
+if(x.length==0){
+alert("please enter a name..\n");
+return false;
+}
+if(y.length==0){
+alert("please enter a address..\n");
+return false;
+}
+if(z.length==0){
+alert("please enter a mobile no..\n");
+return false;
+}
+else{
+	if(z.length!=10){
+		if(!isNaN(z))
+			alert("we are expected to enter 10 digits");
+	}else
+		flag=flag+1;
+	if(isNaN(z)){
+		alert("only digit nothing else..");}
+	else{
+		flag=flag+1;
+	}
+	if(flag==2)
+		return true;
+	else
+		return false;
+		
+		
+	return true;
+	}
+}
+</script></head>
+<body>
+
+<form name="card" method=post action="hello" onSubmit="return chkfrm();">
+<center>
+<b>Enter your name:</b>
+<p><input type="text" name="name"></p>
+<b>Enter your address:</b>
+<p><input type="text" name="address"></p>
+<p><b>Contact no.</b></p>
+<p><input type="text" name="contact"></p>
+<p><input type="submit" value="submit"></p>
+</center>
+</form>
+</body>
+
+</html>
